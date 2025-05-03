@@ -2,33 +2,41 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <title>Dashboard des employés</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/xlsx.mini.min.js"></script>
-    <style>
-        .graph-container {
-            display: inline-block;
-            width: 48%;
-            margin: 1%;
-        }
-    </style>
+    <title>Tableau de bord des tâches des employés</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.24.2/plotly.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Tableau de bord des employés</h1>
-    <input type="file" id="input-excel" accept=".xlsx,.xls" />
+    <h1>Tableau de bord des tâches des employés</h1>
     
-    <div>
-        <label for="select-annee">Filtrer par année :</label>
-        <select id="select-annee"><option value="">Toutes</option></select>
+    <!-- Statut du chargement -->
+    <div id="status" class="status"></div>
+
+    <!-- Sélection des fichiers -->
+    <div class="file-inputs">
+        <label for="input-employes">Fichier des employés (.xlsx, .xls, .csv):</label>
+        <input type="file" id="input-employes" accept=".xlsx,.xls,.csv" />
+        
+        <label for="input-taches">Fichier des tâches (.xlsx, .xls, .csv):</label>
+        <input type="file" id="input-taches" accept=".xlsx,.xls,.csv" />
     </div>
-    
-    <div id="graph-container">
-        <div id="graph-age" class="graph-container"></div>
-        <div id="graph-taches-departement" class="graph-container"></div>
-        <div id="graph-taches-annee" class="graph-container"></div>
-        <div id="graph-taches-etat" class="graph-container"></div>
+
+    <!-- Sélection de l'année -->
+    <div class="year-selector">
+        <label for="select-annee">Choisir une année:</label>
+        <select id="select-annee">
+            <option value="">Toutes</option>
+        </select>
     </div>
-    
-    <script src="main.js"></script>
+
+    <!-- Graphiques -->
+    <div id="graph-age-departement" class="graph-container" style="height: 400px;"></div>
+    <div id="graph-taches-departement" class="graph-container" style="height: 400px;"></div>
+    <div id="graph-taches-age" class="graph-container" style="height: 400px;"></div>
+    <div id="graph-taches-annee" class="graph-container" style="height: 400px;"></div>
+
+     <script src="main.js"></script>
 </body>
 </html>

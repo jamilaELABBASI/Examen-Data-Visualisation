@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.file-inputs {
+    margin-bottom: 20px;
+}
+.file-inputs label {
+    display: block;
+    margin-bottom: 5px;
+}
+.year-selector {
+    margin-bottom: 20px;
+}
+.graph-container {
+    margin-bottom: 30px;
+}
+.status {
+    color: #d9534f;
+    margin-bottom: 20px;
+}
