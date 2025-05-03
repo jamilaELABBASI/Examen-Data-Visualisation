@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard des employés</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/xlsx.mini.min.js"></script>
+    <style>
+        .graph-container {
+            display: inline-block;
+            width: 48%;
+            margin: 1%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tableau de bord des employés</h1>
+    <input type="file" id="input-excel" accept=".xlsx,.xls" />
+    
+    <div>
+        <label for="select-annee">Filtrer par année :</label>
+        <select id="select-annee"><option value="">Toutes</option></select>
+    </div>
+    
+    <div id="graph-container">
+        <div id="graph-age" class="graph-container"></div>
+        <div id="graph-taches-departement" class="graph-container"></div>
+        <div id="graph-taches-annee" class="graph-container"></div>
+        <div id="graph-taches-etat" class="graph-container"></div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
